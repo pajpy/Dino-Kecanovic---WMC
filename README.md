@@ -1,1 +1,1 @@
-# Dino-Kecanovic---WMC
+WMC Semester-Projekt
