@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="../CSS/converter.css">
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <div id="clock"></div>
+    <div class="converter">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" />
+
+        <label for="fromCurrency">From:</label>
+        <select id="fromCurrency">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+        </select>
+
+        <label for="toCurrency">To:</label>
+        <select id="toCurrency">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+        </select>
+
+        <button onclick="convert()">Convert</button>
+
+        <p id="result"></p>
+    </div>
+    <script>
+        console.log("JS radi");
+        const rates = {
+            EUR: { USD: 1.16, GBP: 0.87, EUR: 1 },
+            USD: { EUR: 0.85, GBP: 0.74, USD: 1 },
+            GBP: { EUR: 1.14, USD: 1.33, GBP: 1 }
+             
+        };
+
+        function convert() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const from = document.getElementById('fromCurrency').value;
+            const to = document.getElementById('toCurrency').value;
+
+            if (isNaN(amount)) {
+                document.getElementById('result').innerText = "Please enter a valid number!";
+                return;
+            }
+
+            const result = amount * rates[from][to];
+            document.getElementById('result').innerText =`${amount} ${from} = ${result.toFixed(2)} ${to}`;
+
+        };
+
+    function updateClock() 
+    {
+        const now = new Date();
+        const options = { 
+           weekday: 'short', 
+           year: 'numeric', 
+           month: 'short', 
+           day: 'numeric', 
+           hour: '2-digit', 
+           minute: '2-digit', 
+           second: '2-digit',
+           hour12: false,
+           timeZone: 'Europe/Vienna'
+    };
+    const formatted = now.toLocaleDateString('de-DE', options);
+    document.getElementById('clock').innerText = formatted;
+}
+
+// pozovi odmah i update svakih 1 sekundi
+updateClock();
+setInterval(updateClock, 1000);
+
+
+    </script>
+    <div class="links">
+     <a href="Webvisitenkarte.html">Back to Webvisitenkarte</a>
+     <a href="Flashcards.html">Go to Flashcards</a>
+    </div>
+
+</body>
+</html>
