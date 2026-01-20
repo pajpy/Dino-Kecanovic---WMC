@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    background-image: url(nova.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+nav a:hover {
+    color: skyblue;
+}
+
+.flashcards-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.flashcard {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.flashcard:hover {
+    background-color: skyblue;
+}
+
+.flashcard .answer {
+    display: none;
+    margin-top: 10px;
+    background-color: rgb(0, 255, 170);
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.flashcard:hover .answer {
+    display: block; 
+}
+.white-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.white-link:hover {
+    color: rgb(0, 255, 170);
+    
+}

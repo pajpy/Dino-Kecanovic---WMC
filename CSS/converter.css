@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+     background-image: url(nova.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 40px;
+    font-size: 36px;
+    position: relative;
+    left: -30px;
+}
+
+.converter {
+    background: rgba(0, 50, 150, 0.7); 
+    backdrop-filter: blur(10px);       
+    padding: 30px 40px;
+    border-radius: 15px; /* soft boarders, bended */
+    border: 2px solid rgb(0,255,170); /* size of the line and type with neon color */
+    box-shadow: 0 0 30px rgb(0,255,170,0.5); /* shadow around the element with __ and l shadow moving and 20px for the shadow radius */
+    color: white;
+    max-width: 350px;
+    width: 90%;
+    background: linear-gradient(135deg, #001a50, #002a80, #0040ff, #0060ff, #0080ff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.converter label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.converter input, .converter select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.converter button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(0, 255, 170);
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.converter button:hover {
+    background-color: rgb(0, 255, 170);
+}
+
+#result {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.links {
+    position: fixed;   
+    bottom: 20px;      
+    left: 50%;         
+    transform: translateX(-50%); 
+    text-align: center;
+    z-index: 1000;    
+}
+
+.links a {
+    display: inline-block;  
+    margin: 0 10px;    
+    text-decoration: none;
+    color: white;     
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: rgb(0, 255, 170);   
+}
+
+#clock {
+    position:fixed;    /* uvijek na vrhu */
+    top: 10px;         /* malo odmaknuto od vrha */
+    left: 50%;         /* centrirano horizontalno */
+    transform: translateX(-50%); /* centrirano tačno u sredinu */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;     
+    z-index: 1000;       /* iznad svih drugih elemenata */
+    font-family: Arial, sans-serif;
+}
+
